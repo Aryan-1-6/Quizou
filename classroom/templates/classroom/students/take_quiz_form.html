@@ -38,6 +38,9 @@ input[type=radio]:checked + label:before{
 <h2><span class="badge badge-secondary">{{ answered_questions|add:"1" }}/{{total_questions}}</span></h2>
 
 <h2 class="mb-3">{{ quiz.name }}</h2>
+
+<img src="{% if question.Img %}{{ question.Img.url }}{% endif %}" alt="Question Image" class="img-fluid mb-3">
+
 <p class="lead">{{ question.text }}</p>
 
 <form id="el-form" method="POST" action="{% url 'students:take_quiz' quiz.pk %}">

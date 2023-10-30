@@ -13,7 +13,7 @@
   </nav>
   <h2 class="mb-3">Confirm deletion</h2>
   <p class="lead">Are you sure you want to delete the question <strong>"{{ question.text }}"</strong>? There is no going back.</p>
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <button type="submit" class="btn btn-danger btn-lg">Yes, I'm sure</button>
     <a href="{% url 'teachers:question_change' quiz.pk question.pk %}" class="btn btn-outline-secondary btn-lg" role="button">Nevermind</a>

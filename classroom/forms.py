@@ -51,7 +51,7 @@ class StudentInterestsForm(forms.ModelForm):
 class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question
-        fields = ('text', )
+        fields = ('text', 'Img')
 
 
 class BaseAnswerInlineFormSet(forms.BaseInlineFormSet):
