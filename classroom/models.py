@@ -35,6 +35,7 @@ class Quiz(models.Model):
 class Question(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='questions')
     text = models.TextField('Question')
+    Img = models.ImageField('Question',upload_to= 'C:/Users/Aryan/Quizou_Website/images', null=True)
 
     def __str__(self):
         return self.text

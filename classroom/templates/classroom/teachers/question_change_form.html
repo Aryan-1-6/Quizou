@@ -11,7 +11,7 @@
     </ol>
   </nav>
   <h2 class="mb-3">{{ question.txt }}</h2>
-  <form method="post" novalidate>
+  <form method="post" enctype="multipart/form-datas">
     {% csrf_token %}
     {{ formset.management_form }}
     {{ form|crispy }}

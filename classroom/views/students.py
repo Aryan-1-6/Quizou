@@ -114,6 +114,9 @@ def take_quiz(request, pk):
     total_unanswered_questions = unanswered_questions.count()
     progress = 100 - round(((total_unanswered_questions - 1) / total_questions) * 100)
     question = unanswered_questions.first()
+
+    img_url = question.Img.url if question.Img else None
+
     print(f"r: {question}")
     tm = quiz.total_marks
     qm = tm/total_questions
@@ -147,7 +150,8 @@ def take_quiz(request, pk):
         'form': form,
         'progress': progress,
         'answered_questions': total_questions - total_unanswered_questions,
-        'total_questions': total_questions
+        'total_questions': total_questions,
+        'img_url': img_url   
     })
 
 
